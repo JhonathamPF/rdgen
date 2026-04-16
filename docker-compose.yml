@@ -5,16 +5,16 @@ services:
     image: bryangerlach/rdgen:latest
     restart: unless-stopped
     environment:
-      SECRET_KEY: "django-insecure-!(t-!f#6g#sr%yfded9(xha)g+=!6craeez^cp+*&bz_7vdk61"
-      GHUSER: "github_username"
-      GHBEARER: "github_access_token"
-      GENURL: "accessible_url_of_server"
-      ZIP_PASSWORD: "exp@134679"
-      GHBRANCH: "master"
-      PROTOCOL: "https"
-      REPONAME: "rdgen"
-      SH_SECRET: ""
-      DEBUG: "True"
+      SECRET_KEY: "${SECRET_KEY}"
+      GHUSER: "${GHUSER}"
+      GHBEARER: "${GHBEARER}"
+      GENURL: "${GENURL}"
+      ZIP_PASSWORD: "${ZIP_PASSWORD:-}" # O :- significa vazio se n?o definido
+      GHBRANCH: "${GHBRANCH}"
+      PROTOCOL: "${PROTOCOL}"
+      REPONAME: "${REPONAME}"
+      SH_SECRET: "${SH_SECRET:-}"
+      DEBUG: "${DEBUG:-False}"
     ports:
       - "45250:8000"
     dns:
