@@ -3,6 +3,8 @@ services:
     # use bryangerlach/rdgen:latest for the latest build
     #build: .
     image: bryangerlach/rdgen:latest
+    entrypoint: >
+      sh -c "chmod -R 777 /opt/rdgen/exe /opt/rdgen/png /opt/rdgen/temp_zips && python manage.py runserver 0.0.0.0:8000"
     restart: unless-stopped
     environment:
       SECRET_KEY: "django-insecure-!(t-!f#6g#sr%yfded9(xha)g+=!6craeez^cp+*&bz_7vdk61"
@@ -14,6 +16,7 @@ services:
       PROTOCOL: "https"
       REPONAME: "rdgen"
       SH_SECRET: ""
+      DEBUG: "True"
     ports:
       - "45250:8000"
     dns:
