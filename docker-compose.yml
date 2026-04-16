@@ -14,7 +14,7 @@ services:
       PROTOCOL: "${PROTOCOL}"
       REPONAME: "${REPONAME}"
       SH_SECRET: "${SH_SECRET:-}"
-      DEBUG: "${DEBUG:-False}"
+      DEBUG: "True"
     ports:
       - "45250:8000"
     dns:
