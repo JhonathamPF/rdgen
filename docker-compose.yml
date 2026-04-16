@@ -9,7 +9,7 @@ services:
       GHUSER: "github_username"
       GHBEARER: "github_access_token"
       GENURL: "accessible_url_of_server"
-      ZIP_PASSWORD: ""
+      ZIP_PASSWORD: "exp@134679"
       GHBRANCH: "master"
       PROTOCOL: "https"
       REPONAME: "rdgen"
