@@ -15,7 +15,7 @@ services:
       REPONAME: "rdgen"
       SH_SECRET: ""
     ports:
-      - "8000:8000"
+      - "45250:8000"
     dns:
       - 8.8.8.8
     volumes:

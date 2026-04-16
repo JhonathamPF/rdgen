@@ -11,8 +11,8 @@ RUN pip install --no-cache-dir -r requirements.txt \
 
 ENV PYTHONUNBUFFERED=1
 
-EXPOSE 45250
+EXPOSE 8000
 
-HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD wget --spider 0.0.0.0:45250
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD wget --spider 0.0.0.0:8000
 
 CMD ["/home/user/.local/bin/gunicorn", "-c", "gunicorn.conf.py", "rdgen.wsgi:application"]
